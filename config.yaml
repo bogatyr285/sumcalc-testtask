@@ -1,0 +1,13 @@
+app:
+  name: doerapi
+  # remove verbose logging on prod
+  # available: prod/dev/staging
+  env: prod
+  listen:
+    http: :8080
+  jwt:
+    issuer: doer.auth
+    expires_in: 1h
+    # es256 keys. if you want to change format check cmd/serve.go
+    private_key: ./private.ec.key
+    public_key: ./public.pem
